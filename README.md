@@ -62,5 +62,25 @@ Repeat steps 1–2 after any code/content change you want packaged into the apps
 ## Contributing
 PRs welcome: new games, UX polish, accessibility fixes, or content curation.
 
-## License
-MIT
+## ⚖️ License & Commercial Use
+
+**Playstori is free for everyone to use, learn from, and enjoy.**
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+
+✅ **You are free to:**
+*   Download and play the games.
+*   Fork the code and modify it for personal use.
+*   Use it in a classroom or non-profit setting.
+
+❌ **You may NOT:**
+*   Sell this app on the App Store or Google Play.
+*   Wrap this code with ads and distribute it.
+*   Use this code as part of a paid commercial product.
+
+### 💼 Commercial Inquiries & Whitelabeling
+Do you represent a school district, a company, or a publisher? 
+We offer commercial licenses for use cases that fall outside the Non-Commercial license.
+
+*   **Sponsors:** Top-tier GitHub Sponsors may receive a temporary commercial license grant.
+*   **Partners:** Contact us to discuss whitelabeling or commercial usage rights as.
