@@ -15,8 +15,8 @@ Open-source, offline-capable kids game launcher built with Vite + Capacitor. Saf
 - `src/` — launcher UI/logic (built by Vite)
 - `public/` — static content
   - `public/games.json` — game database (fetched at runtime)
-  - `public/games/` — each game lives in its own folder
-  - `public/manifest.json`, `public/icons/` — PWA assets
+  - `public/games/` — each game lives in its own folder (standard: `games/<id>/index.html`, thumb `games/<id>/<id>-logo.*`)
+  - `public/manifest.json`, `public/icons/` — PWA assets and logo
 
 ## How to add or edit games
 1) Place the game folder in `public/games/<your-game-id>/` with `index.html` and a `thumb` image. Keep asset paths relative (no external CDNs) so it works offline.
@@ -25,17 +25,25 @@ Open-source, offline-capable kids game launcher built with Vite + Capacitor. Saf
 {
   "id": "my-new-game",
   "name": "Super Logic",
+  "tag": "logic",
   "path": "games/my-new-game/index.html",
-  "thumb": "games/my-new-game/thumb.png",
+  "thumb": "games/my-new-game/my-new-game-logo.png",
   "description": "Calm logic puzzle."
 }
 ```
 3) If the dev server is running, refresh to see it. For production web/native builds, rerun `npm run build` before packaging or deploy.
 
-To award a star from inside the game on level complete:
+To award a star from inside the game (iframe mode) on level complete:
 ```js
 window.parent?.postMessage({ type: 'ADD_STAR', gameId: '<your-game-id>' }, '*');
 ```
+If you launch games directly (no iframe), increment the shared counter from the game with:
+```js
+const key = 'playstori-star-delta';
+const next = (Number(localStorage.getItem(key) || '0') + 1).toString();
+localStorage.setItem(key, next);
+```
+The launcher will sync that value on next load.
 
 ## Build and preview
 - Dev: `npm run dev`

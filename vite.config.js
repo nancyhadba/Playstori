@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'icons/*.png', 'games/**', 'fonts/**'],
+      includeAssets: ['favicon.ico', 'icons/*.png', 'fonts/**'],
       manifest: {
         name: 'Playstori Kids Launcher',
         short_name: 'Playstori',
@@ -27,8 +27,21 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff2}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        globIgnores: ['games/**'],
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        skipWaiting: true,
+        clientsClaim: true,
+        navigateFallbackDenylist: [/^\/games\//],
         runtimeCaching: [
+          {
+            urlPattern: /\/games\.json$/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'playstori-data',
+              expiration: { maxEntries: 5, maxAgeSeconds: 60 * 5 }
+            }
+          },
           {
             urlPattern: /^https?:\/\/.*/i,
             handler: 'NetworkFirst',
