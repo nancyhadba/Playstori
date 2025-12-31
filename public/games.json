@@ -153,7 +153,7 @@
                       "tag":  "puzzle",
                       "description":  "Classic Four Colors.",
                       "path":  "games/four-colors/html5/minified/index.html",
-                      "thumb":  "games/four-colors/html5/source/images/icon-block.png"
+                      "thumb":  "games/four-colors/icon-256.png"
                   },
                   {
                       "id":  "gold-miner",
@@ -273,7 +273,7 @@
                       "tag":  "puzzle",
                       "description":  "Drop the pieces into the right outlines.",
                       "path":  "games/fit-the-shape/index.html",
-                      "thumb":  "games/fit-the-shape/assets/frame.png"
+                      "thumb":  "games/fit-the-shape/icon-256.png"
                   },
                   {
                       "id":  "flappy-emoji",

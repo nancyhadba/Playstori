@@ -111,6 +111,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
 }
+.games-grid.single-result {
+  justify-content: center;
+}
+.games-grid.single-result .game-card {
+  width: clamp(256px, 40vw, 512px);
+  justify-self: center;
+}
 .game-card {
   position: relative;
   background: var(--card);

@@ -99,6 +99,7 @@ function renderGames() {
       if (!term) return true;
       return g.name.toLowerCase().includes(term) || (g.tag || '').toLowerCase().includes(term);
     });
+  els.gamesGrid.classList.toggle('single-result', filtered.length === 1);
   if (!filtered.length) {
     const p = document.createElement('p');
     p.className = 'muted';
